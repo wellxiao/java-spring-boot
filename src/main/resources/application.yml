@@ -1,0 +1,22 @@
+
+
+server:
+  port: 8081 # 配置启动端口号
+
+mybatis:
+  config-location:
+    classpath: mybatis.cfg.xml #mybatis主配置文件所在路径
+  type-aliases-package: com.wellxiao.springboot.demo.wellxiao.dao   #定义所有操作类的别名所在包
+  mapper-locations: classpath:mapper/*.xml   #所有的mapper映射文件
+
+
+#  这样配置从数据库中查询的时间格式，返回前端为时间戳模式
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wellxiao?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 114094
